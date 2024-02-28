@@ -1,0 +1,15 @@
+import re
+
+# Specify the path to your file
+file_path = 'path/to/your/file.txt'
+
+# Read the content of the file
+with open(file_path, 'r') as file:
+    file_content = file.read()
+
+# Use regular expression to find matches
+matches = re.findall(r'InputRecord=(\d+)\s+OutputRecord-(\d+)', file_content)
+
+# Print the results
+for match in matches:
+    print(f'InputRecord={match[0]}  OutputRecord-{match[1]}')
